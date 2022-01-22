@@ -25,7 +25,14 @@ https://script.google.com/home
 
 ### ツールのセットアップ
 
-1. 各種APIに対応するクライアントキーやシークレットを作成し、props.gsに記載する。
+1. 各種APIに対応するクライアントキーやシークレットを作成する。  
+[healthplanet] https://www.healthplanet.jp/create_client_id.do  
+`アプリケーションタイプ = Webアプリケーション`  
+[fitbit] https://dev.fitbit.com/apps/new  
+`OAuth 2.0 Application Type = Personal`,`Default Access Type = Read & Write`  
+[Google] 複雑なので、以下参照。  
+https://qiita.com/hirotow/items/d7a6384ff85437d94b0a
+1. 上記作成したキー＆シークレットをprops.gsに記載する。
 1. props.gs内のsetProps()を実行する。
 1. main.gs内のrun()を実行する。
 1. 起動すると実行ログにHealthPlanet認証用URLが出力されるので、ブラウザでアクセスする
