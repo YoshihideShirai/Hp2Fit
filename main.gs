@@ -1,3 +1,34 @@
+const DATE_OF_MEASUREMENT = "1";
+const BODY_WEIGHT = "6021";
+const BODY_FAT = "6022";
+
+const healthPlanet = {
+  "serviceName": "HealthPlanet",
+  "clientId": PropertiesService.getScriptProperties().getProperty('HEALTHPLANET_API_CLIENT_ID'),
+  "clientSecret": PropertiesService.getScriptProperties().getProperty('HEALTHPLANET_API_CLIENT_SECRET'),
+  "setAuthorizationBaseUrl": "https://www.healthplanet.jp/oauth/auth",
+  "tokenUrl": "https://www.healthplanet.jp/oauth/token",
+  "innerscanUrl": "https://www.healthplanet.jp/status/innerscan.json",
+  "callback": "hpAuthCallback",
+  "scope": "innerscan",
+  "grantType": "authorization_code",
+  "payloadDate": DATE_OF_MEASUREMENT,
+  "payloadTag": `${BODY_WEIGHT},${BODY_FAT}`
+}
+
+const googleFit = {
+  "serviceName": "GoogleFit",
+  "clientId": PropertiesService.getScriptProperties().getProperty('GOOGLE_API_CLIENT_ID'),
+  "clientSecret": PropertiesService.getScriptProperties().getProperty('GOOGLE_API_CLIENT_SECRET'),
+  "setAuthorizationBaseUrl": "https://accounts.google.com/o/oauth2/auth",
+  "tokenUrl": "https://oauth2.googleapis.com/token",
+  "dataSourceUrl": "https://www.googleapis.com/fitness/v1/users/me/dataSources",
+  "callback": "gfAuthCallback",
+  "scope": "https://www.googleapis.com/auth/fitness.body.write",
+  "weight": "com.google.weight",
+  "fat": "com.google.body.fat.percentage"
+}
+
 const HTTP_STATUS_CODE_OK = 200;
 const HTTP_STATUS_CODE_CONFLICT = 409;
 const TO_NS = 1000 * 1000 * 1000;
@@ -377,8 +408,8 @@ const removeHealthData = () => {
 const setDataourceToProperty = () => {
   console.log(property.getProperty(googleFit.weight));
   console.log(property.getProperty(googleFit.fat));
-  property.setProperty(googleFit.weight, "(weight datasource name)");
-  property.setProperty(googleFit.fat, "(fat datasource name)");
+  property.setProperty(googleFit.weight, "< dataStreamId >");
+  property.setProperty(googleFit.fat, "< dataStreamId >");
 }
 
 /**
