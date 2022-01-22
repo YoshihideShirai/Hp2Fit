@@ -15,9 +15,9 @@ Google Apps Script(以下 GAS)を使用しているが、GASにはスケジュ�
 1. Githubアカウントを持ってなければ作成。
 1. Githubで、このリポジトリをForkする。
 1. Google Apps Script GitHub アシスタント(以下、GASアシスタント)をインストール & setup
-https://chrome.google.com/webstore/detail/google-apps-script-github/lfjcgcmkmjjlieihflfhjopckgpelofo
-https://tonari-it.com/gas-github-assistant-install/
-1. Apps Scriptのプロジェクトを作成する。プロジェクト名はお好みで。
+https://chrome.google.com/webstore/detail/google-apps-script-github/lfjcgcmkmjjlieihflfhjopckgpelofo  
+https://tonari-it.com/gas-github-assistant-install/  
+1. Apps Scriptのプロジェクトを作成する。プロジェクト名はお好みで。  
 https://script.google.com/home
 1. ForkしたGithubリポジトリが、 GASアシスタントから見えるようになるので、そのリポジトリで mainブランチを指定して 【↓】アイコンのpullを実行する。
 1. 本リポジトリにある props.gs.template を、Apps Scriptのプロジェクトに props.gsとしてコピーペースト実施。
