@@ -52,7 +52,6 @@ const fetchHealthData = (service) => {
     "access_token": service.getAccessToken(),
     "date": healthPlanet.payloadDate,
     "tag": healthPlanet.payloadTag,
-    "from": dayjs.dayjs().subtract(3, "month").format("YYYYMMDDHHmmss")
   };
 
   const options = {
@@ -61,5 +60,7 @@ const fetchHealthData = (service) => {
   };
 
   const response = UrlFetchApp.fetch(healthPlanet.innerscanUrl, options);
+  console.log(payload);
+  console.log(response.getContentText());
   return JSON.parse(response);
 }

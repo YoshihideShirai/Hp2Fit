@@ -79,8 +79,14 @@ function fbPostWeight(service, date, weight){
   };
 
   var responseWeight = UrlFetchApp.fetch(urlWeight, optionsWeight);
-  console.log(responseWeight.getResponseCode());
-  console.log(responseWeight.getContentText());
+  if (responseWeight.getResponseCode = HTTP_STATUS_CODE_OK) {
+    console.log("Fitbit weight logs(%s) have been registered successfully", date);
+    console.log(responseWeight.getContentText());
+  } else {
+    console.log("Failed to register Fitbit weight logs(%s).", date);
+    console.log(responseWeight.getResponseCode());
+    console.log(responseWeight.getContentText());
+  }
 }
 
 function fbPostFat(service, date, fat){
@@ -104,6 +110,12 @@ function fbPostFat(service, date, fat){
   };
 
   var responseFat = UrlFetchApp.fetch(urlFat, optionsFat);
-  console.log(responseFat.getResponseCode());
-  console.log(responseFat.getContentText());
+  if (responseFat.getResponseCode = HTTP_STATUS_CODE_OK) {
+    console.log("Fitbit fat logs(%s) have been registered successfully", date);
+    console.log(responseFat.getContentText());
+  } else {
+    console.log("Failed to register Fitbit fat logs(%s).", date);
+    console.log(responseFat.getResponseCode());
+    console.log(responseFat.getContentText());
+  }
 }
