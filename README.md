@@ -1,4 +1,14 @@
-# Hp2Fit
+# HealthPlanet → Google fit/Fitbit 連携ツール
+
+## 概要
+
+HealthPlanetの体重と体脂肪率を、Google fit/Fitbitに転送するツール。  
+Google Apps Script(以下 GAS)を使用しているが、GASにはスケジュール機能があるため、  
+自動で連動される。
+
+## 動作環境
+
+- Google Apps Script (googleアカウントがあれば、無料で利用できる。)
 
 ## 参考(というかほぼそのまま)
 
