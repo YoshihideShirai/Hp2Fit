@@ -10,7 +10,8 @@ Google Apps Script(以下 GAS)を使用しているが、GASにはスケジュ�
 
 - Google Apps Script (googleアカウントがあれば、無料で利用できる。)
 
-## ソースコードをGoogle Apps Scriptへの取り込み
+## 構築手順
+### ソースコードをGoogle Apps Scriptへの取り込み
 
 1. Githubアカウントを持ってなければ作成。
 1. Githubで、このリポジトリをForkする。
@@ -22,7 +23,7 @@ https://script.google.com/home
 1. ForkしたGithubリポジトリが、 GASアシスタントから見えるようになるので、そのリポジトリで mainブランチを指定して 【↓】アイコンのpullを実行する。
 1. 本リポジトリにある props.gs.template を、Apps Scriptのプロジェクトに props.gsとしてコピーペースト実施。
 
-## ツールのセットアップ
+### ツールのセットアップ
 
 1. 各種APIに対応するクライアントキーやシークレットを作成し、props.gsに記載する。
 1. props.gs内のsetProps()を実行する。
@@ -41,11 +42,17 @@ https://script.google.com/home
 1. 画面の指示に従って認証を完了させる
 1. main.gs内のrun()を実行する。これで、データが送信できていれば、OK。
 
-## 定期実行
+### 定期実行
 
 1. Apps Scriptプロジェクトに、トリガー設定がある。 main.gs内のrun() を 1時間毎などに設定する。
 
 お疲れ様でした！！！
+
+## トラブルシュート
+
+- Google Apps Script GitHub アシスタントで、[GitHub assistant] undefined エラー となり pullできない。  
+以下のページに答えがあった。
+https://qiita.com/ryotab22/items/677ab0cd1611062b8ae8
 
 ## 参考(というかほぼそのまま)
 
