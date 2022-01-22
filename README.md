@@ -34,7 +34,6 @@ https://script.google.com/home
 https://qiita.com/hirotow/items/d7a6384ff85437d94b0a
 1. 上記作成したキー＆シークレットをprops.gsに記載する。
 1. props.gsの SCALE_MODELに体組成計のモデル名を記載する。(間違っても動作に影響ないが、Google Fitのデータベースの名前に使われる。)
-1. props.gs内のsetProps()を実行する。
 1. main.gs内のrun()を実行する。
 1. 起動すると実行ログにHealthPlanet認証用URLが出力されるので、ブラウザでアクセスする
 1. HealthPlanetのログイン画面が表示されるのでログインする
