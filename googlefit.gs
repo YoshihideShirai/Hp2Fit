@@ -65,7 +65,7 @@ const createGFDataSource = (service, dataName) => {
     },
     "device": {
       "manufacturer": "TANITA",
-      "model": "RD-800",
+      "model": SCALE_MODEL,
       "type": "scale",
       "uid": "1000001",
       "version": "1.0"
