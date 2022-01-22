@@ -33,6 +33,9 @@ const property = PropertiesService.getUserProperties();
  * 6. logoutFromServiceを実行して、GoogleFit及びHealthPlanetから切断する
  */
 const run = () => {
+
+  setProps();
+
   const hpService = getHPService();
   let healthData;
 
