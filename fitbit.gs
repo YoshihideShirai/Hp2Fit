@@ -79,7 +79,8 @@ function fbPostWeight(service, date, weight){
   };
 
   var responseWeight = UrlFetchApp.fetch(urlWeight, optionsWeight);
-  Logger.log(JSON.parse(responseWeight))
+  console.log(responseWeight.getResponseCode());
+  console.log(responseWeight.getContentText());
 }
 
 function fbPostFat(service, date, fat){
@@ -103,5 +104,6 @@ function fbPostFat(service, date, fat){
   };
 
   var responseFat = UrlFetchApp.fetch(urlFat, optionsFat);
-  Logger.log(JSON.parse(responseFat))
+  console.log(responseFat.getResponseCode());
+  console.log(responseFat.getContentText());
 }
