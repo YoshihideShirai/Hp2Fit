@@ -1,6 +1,4 @@
 
-
-
 const HTTP_STATUS_CODE_OK = 200;
 const HTTP_STATUS_CODE_CONFLICT = 409;
 const TO_NS = 1000 * 1000 * 1000;
@@ -67,6 +65,7 @@ const run = () => {
   // Fitbitへの認証が完了していない場合は認証用URLを出力して終了する
   if (fbService.hasAccess()) {
     console.log("Fitbit is ready");
+    fbPostHealthData(fbService,healthData);
   } else {
     console.log("Please go to the URL below to complete the authentication with Fitbit");
     console.log(fbService.getAuthorizationUrl());
