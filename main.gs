@@ -19,7 +19,8 @@ const property = PropertiesService.getUserProperties();
  *    正）https://script.google.com/macros/d/{SCRIPT ID}/usercallback?code={CODE}&state={STATE}
  * 6. Success!と表示されれば登録が完了。HealthPlanetの連携アプリ一覧にツールが表示される
  * 7. 続いて実行ログにGoogleFit認証用URLが出力されるので、ブラウザでアクセスする
- * 8. 画面の指示に従って認証を完了させる
+ * 8. 続いて実行ログにFitbit認証用URLが出力されるので、ブラウザでアクセスする
+ * 9. 画面の指示に従って認証を完了させる
  * 
  * HealthPlanet及びGoogleFitとのデータ削除を含む接続解除手順は下記の通り。
  * 1. removeHealthDataを実行してGoogleFitからデータセットを削除する
