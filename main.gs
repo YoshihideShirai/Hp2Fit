@@ -29,6 +29,18 @@ const googleFit = {
   "fat": "com.google.body.fat.percentage"
 }
 
+const fitbit = {
+  "serviceName": "Fitbit",
+  "clientId": PropertiesService.getScriptProperties().getProperty('FITBIT_API_CLIENT_ID'),
+  "clientSecret": PropertiesService.getScriptProperties().getProperty('FITBIT_API_CLIENT_SECRET'),
+  "setAuthorizationBaseUrl": "https://www.fitbit.com/oauth2/authorize",
+  "tokenUrl": "https://api.fitbit.com/oauth2/token",
+  "dataSourceUrl": "https://www.googleapis.com/fitness/v1/users/me/dataSources",
+  "callback": "fbAuthCallback",
+  "scope": "weight"
+}
+
+
 const HTTP_STATUS_CODE_OK = 200;
 const HTTP_STATUS_CODE_CONFLICT = 409;
 const TO_NS = 1000 * 1000 * 1000;
@@ -89,6 +101,17 @@ const run = () => {
     console.log("Please go to the URL below to complete the authentication with GoogleFit");
     console.log(gfService.getAuthorizationUrl());
   }
+
+  const fbService = getFBService();
+
+  // Fitbitへの認証が完了していない場合は認証用URLを出力して終了する
+  if (fbService.hasAccess()) {
+    console.log("Fitbit is ready");
+  } else {
+    console.log("Please go to the URL below to complete the authentication with Fitbit");
+    console.log(fbService.getAuthorizationUrl());
+  }
+
 }
 
 /**
@@ -410,6 +433,31 @@ const setDataourceToProperty = () => {
   console.log(property.getProperty(googleFit.fat));
   property.setProperty(googleFit.weight, "< dataStreamId >");
   property.setProperty(googleFit.fat, "< dataStreamId >");
+}
+
+/**
+ * Fitbit用の認証サービスを取得する。
+ */
+const getFBService = () => {
+  return OAuth2.createService(fitbit.serviceName)
+    .setAuthorizationBaseUrl(fitbit.setAuthorizationBaseUrl)
+    .setTokenUrl(fitbit.tokenUrl)
+    .setClientId(fitbit.clientId)
+    .setClientSecret(fitbit.clientSecret)
+    .setCallbackFunction(fitbit.callback)
+    .setPropertyStore(property)
+    .setScope(fitbit.scope)
+    .setTokenHeaders({'Authorization': 'Basic ' + Utilities.base64Encode(fitbit.clientId + ':' + fitbit.clientSecret)});
+}
+
+function fbAuthCallback(request) {
+  var service = getFBService();
+  var isAuthorized = service.handleCallback(request);
+  if (isAuthorized) {
+    return HtmlService.createHtmlOutput('Success!');
+  } else {
+    return HtmlService.createHtmlOutput('Denied.');
+  }
 }
 
 /**
