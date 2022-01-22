@@ -58,8 +58,9 @@ https://qiita.com/hirotow/items/d7a6384ff85437d94b0a
 ## トラブルシュート
 
 - Google Apps Script GitHub アシスタントで、[GitHub assistant] undefined エラー となり pullできない。  
-以下のページに答えがあった。
-https://qiita.com/ryotab22/items/677ab0cd1611062b8ae8
+以下のページに答えがあった。  
+https://qiita.com/ryotab22/items/677ab0cd1611062b8ae8  
+`Apps Scriptダッシュボードの設定をオンにする`で解決した。
 
 ## 参考(というかほぼそのまま)
 
