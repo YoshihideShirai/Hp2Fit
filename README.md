@@ -31,7 +31,7 @@ https://script.google.com/home
 [fitbit] https://dev.fitbit.com/apps/new  
 `OAuth 2.0 Application Type = Personal`,`Default Access Type = Read & Write`  
 [Google] 複雑なので、以下参照。  
-https://qiita.com/hirotow/items/d7a6384ff85437d94b0a
+https://qiita.com/potstickers/items/8fa8dce3e31efcde078a#googlefit-api-%E3%81%AE%E6%BA%96%E5%82%99
 1. 上記作成したキー＆シークレットをprops.gsに記載する。
 1. props.gsの SCALE_MODELに体組成計のモデル名を記載する。(間違っても動作に影響ないが、Google Fitのデータベースの名前に使われる。)
 1. main.gs内のrun()を実行する。
