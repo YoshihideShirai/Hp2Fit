@@ -162,14 +162,14 @@ const postHealthData = (service, dataName, healthData) => {
  * 指定した日付（文字列）の開始時刻をナノ秒精度のUNIX時間に変換する。
  */
 const convertUnixStartTime = (dateString) => {
-  return dayjs.dayjs(dateString, "YYYYMMDDHHmm").startOf("date").unix() * TO_NS;
+  return dayjs.dayjs(dateString, "YYYYMMDDHHmm").unix() * TO_NS;
 }
 
 /**
  * 指定した日付（文字列）の終了時刻をナノ精度のUNIX時間に変換する。
  */
 const convertUnixEndTime = (dateString) => {
-  return dayjs.dayjs(dateString, "YYYYMMDDHHmm").endOf("date").unix() * TO_NS;
+  return dayjs.dayjs(dateString, "YYYYMMDDHHmm").unix() * TO_NS;
 }
 
 /**
